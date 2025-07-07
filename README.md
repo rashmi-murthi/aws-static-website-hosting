@@ -11,16 +11,18 @@ This is the first phase of building a fully secure static website using AWS clou
 - Creates an **S3 bucket** to host static website files like `index.html` and `error.html`
 - Enables **versioning** to keep history of changes
 - **Blocks public access** to make sure the content isn’t directly exposed
-- Enables **static website hosting**
-- Verifies that direct access is restricted (bucket is not public)
-
+- **Does not enable** static website hosting (CloudFront will access the bucket via OAC)
+- Ensures access is only allowed through **CloudFront**, not directly via S3
+  
 ---
 
 ##  AWS Services Used
 
-- **Amazon S3** – to store and serve website files
-- **S3 Versioning** – to track changes to files
-- (Later: **CloudFront**, **ACM**, **Route 53** will be added in next steps)
+- **Amazon S3** – to securely store static website files
+- **S3 Versioning** – to keep historical versions of files
+- **Amazon CloudFront** – to distribute content globally with low latency
+- **AWS Certificate Manager (ACM)** – to enable secure HTTPS connections
+- **Amazon Route 53** – to manage custom domain and DNS routing
 
 ---
 
