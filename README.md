@@ -1,6 +1,7 @@
 #  Static Website Hosting on AWS S3 with Versioning (Private Access Only)
 
-This project explains how to host a static website on AWS using **S3**, with **versioning enabled** and **public access blocked**. Later, we will connect it to **CloudFront + HTTPS + Route 53** for secure delivery.
+This project explains how to host a static website on AWS using **S3 with versioning and private access**, and securely deliver it using **CloudFront, HTTPS (via ACM), and Route 53**.
+
 
 This is the first phase of building a fully secure static website using AWS cloud services.
 
@@ -8,7 +9,7 @@ This is the first phase of building a fully secure static website using AWS clou
 
 ##  What This Project Does
 
-- Creates an **S3 bucket** to host static website files like `index.html` and `error.html`
+- Creates an **S3 bucket** to host static website file like `index.html`
 - Enables **versioning** to keep history of changes
 - **Blocks public access** to make sure the content isn’t directly exposed
 - **Does not enable** static website hosting (CloudFront will access the bucket via OAC)
